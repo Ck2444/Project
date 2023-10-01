@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+
+
+}
+
+.main_conainer {
+  display: flex;
+  flex-direction: column;
+  /* Настроим вертикальное выравнивание по центру */
+  align-items: center;
+  /* Выравнивание по вертикали */
+  min-height: 100vh;
+  /* Чтобы контейнер занимал всю высоту видимой области */
+}
