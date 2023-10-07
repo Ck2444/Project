@@ -8,10 +8,17 @@ export default function AllSales() {
 
     const discount_products = product_sale.filter(el => el.discont_price !== null)
 
+    const h1Styles = {
+        fontWeight: 700,
+        lineHeight: "130%",
+        letterSpacing: "1.2px",
+        marginLeft: '31px'
+    };
+
     return (
 
         <div>
-            <h1>All Sales</h1>
+            <h1 style={h1Styles}>All Sales</h1>
             <SortFormForSales />
             <ProductsContainer products={discount_products} />
         </div>

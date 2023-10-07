@@ -12,6 +12,7 @@ export default function ProductCard({ id, title, image, price, discont_price, ca
     const categories_state = useSelector(state => state.categeories)
 
     const category_name = categories_state.find(el => el.id === categoryId)
+
     return (
 
 
@@ -19,7 +20,7 @@ export default function ProductCard({ id, title, image, price, discont_price, ca
             <Link to={`/products/${id}`}>
                 <img src={`http://localhost:3333${image}`} alt={title} />
 
-                {discont_price > 0 ? (
+                {discont_price ? (
                     <div className={s.discountInfo}>
                         <p>
                             <span className={s.priceText}>{discont_price}</span>
@@ -44,7 +45,7 @@ export default function ProductCard({ id, title, image, price, discont_price, ca
                 <Link to={`/categories/${categoryId}`}>
 
                     {
-                        category_show ? <p>Category: {category_name.title}</p> : ''
+                        category_show ? <p className={s.category}>Category: {category_name && category_name.title}</p> : ''
                     }
                 </Link>
 
@@ -53,7 +54,7 @@ export default function ProductCard({ id, title, image, price, discont_price, ca
 
             <div
                 className={s.add_btn}
-                onClick={() => dispatch(addToCartAction({ id, image, title, price }))}
+                onClick={() => dispatch(addToCartAction({ id, image, title, price, discont_price }))}
             >
                 Add to cart
             </div>

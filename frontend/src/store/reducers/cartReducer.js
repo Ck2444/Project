@@ -19,7 +19,7 @@ export const clearCartAction = () => ({ type: CLEAR_CART });
 
 
 const checkProduct = (state, payload) => {
-    const productInCart = state.find(el => el.id === payload.id);
+    const productInCart = state.find(el => el.id === +payload.id);
     if (!productInCart) {
         return [...state, { ...payload, count: 1 }]
     } else {
@@ -28,7 +28,9 @@ const checkProduct = (state, payload) => {
     }
 }
 
-export const cartReducer = (state = [], action) => {
+const initialState = JSON.parse(localStorage.getItem('local_cart')) || []
+
+export const cartReducer = (state = initialState, action) => {
     if (action.type === ADD_TO_CART) {
         return checkProduct(state, action.payload)
     } else if (action.type === DELETE_FROM_CART) {

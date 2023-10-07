@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { sortProductsAction } from '../../../store/reducers/allProductsReducer'
+import s from '../SortForm/SortForm.module.css'
 
 export default function SortForm() {
 
@@ -9,8 +10,8 @@ export default function SortForm() {
     const order = e => dispatch(sortProductsAction(e.target.value))
 
     return (
-        <label>
-            <p>Sorted</p>
+        <label className={s.sorted}>
+            <p className={s.title}>Sorted</p>
             <select onInput={order}>
                 <option value='default'>by default</option>
                 <option value='title'>By alphabet A-Z</option>

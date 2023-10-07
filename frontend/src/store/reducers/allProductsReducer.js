@@ -24,21 +24,34 @@ export const productsReducer = (state = [], action) => {
         if (action.payload === 'title') {
             return [...state].sort((a, b) => a.title.localeCompare(b.title))
         } else if (action.payload === 'price_asc') {
-            return [...state].sort((a, b) => a.price - b.price)
+            return [...state].sort((a, b) => {
+                const aFinalPrice = a.discont_price ? a.discont_price : a.price;
+                const bFinalPrice = b.discont_price ? b.discont_price : b.price;
+                return aFinalPrice - bFinalPrice;
+            })
         } else if (action.payload === 'price_desc') {
-            return [...state].sort((a, b) => b.price - a.price)
+            return [...state].sort((a, b) => {
+                const aFinalPrice = a.discont_price ? a.discont_price : a.price;
+                const bFinalPrice = b.discont_price ? b.discont_price : b.price;
+                return bFinalPrice - aFinalPrice;
+            })
         } else if (action.payload === 'default') {
             return [...state].sort((a, b) => a.id - b.id)
         }
-    } else if (action.type === FILTER_PRODUCTS) {
+    }
+
+    else if (action.type === FILTER_PRODUCTS) {
         const { min_value, max_value } = action.payload;
-        return state.map(el => {
-            if (el.price >= min_value && el.price <= max_value) {
+
+        return state.map((el) => {
+            if ((el.discont_price ? el.discont_price : el.price) >= min_value && (el.discont_price ? el.discont_price : el.price) <= max_value)
+            // if ( el.price >= min_value && el.price  <= max_value) 
+            {
                 el.show_product = true;
             } else {
                 el.show_product = false;
             }
-            return el
+            return el;
         })
 
     } else if (action.type === GET_DISCOUT_PRODUCTS) {

@@ -4,6 +4,7 @@ import s from '../ProductsContainer/ProductsContainer.module.css'
 
 
 export default function ProductsContainer({ products, category_show }) {
+
     return (
         <div className={s.container}>
             {
@@ -15,5 +16,3 @@ export default function ProductsContainer({ products, category_show }) {
         </div>
     )
 }
-
-  // 

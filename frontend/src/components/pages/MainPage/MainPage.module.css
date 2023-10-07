@@ -63,8 +63,8 @@
 }
 
 .catalog a {
-    width: 120px;
-    height: 30.968px;
+    width: 164px;
+    height: 41.97px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,10 +102,11 @@
     height: 422px;
     margin-top: 27px;
     margin-left: 91px;
+    margin-right: 200px;
 }
 
 .draw_block_content {
-    margin: 44px 258px 45px 0px;
+    margin: 15px 258px 45px 0px;
 
 }
 
@@ -124,7 +125,7 @@
     letter-spacing: 1.5px;
 }
 
-.draw_block_content input {
+/* .draw_block_content input {
     width: 473px;
     height: 75.441px;
     border-radius: 25.147px;
@@ -156,7 +157,7 @@
     margin-left: 10px;
     color: rgb(215, 48, 48);
     font-size: 15px;
-}
+} */
 
 /* ------Sale------ */
 

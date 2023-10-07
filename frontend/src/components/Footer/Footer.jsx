@@ -1,6 +1,9 @@
 import React from 'react'
 import s from '../Footer/Footer.module.css'
 import GoogleMap from './GoogleMap/GoogleMap'
+import istaImage from '../../media/image_4.png'
+import whatsappImg from '../../media/image_5.png'
+
 
 
 export default function Footer() {
@@ -12,11 +15,16 @@ export default function Footer() {
                     <p className={s.number}> <a href="+49 999 999 99 99"> +49 999 999 99 99</a></p>
                     <div className={s.social_media_content}>
                         <div className={s.icon}>
-                            {/* <a href="https://www.instagram.com/tel_ran/"></a> */}
+                            <a href="https://www.instagram.com">
+                                <img src={istaImage} alt="inatagram" />
+
+                            </a>
                             <p>Instagram</p>
                         </div>
                         <div className={s.icon}>
-                            {/* <a href="https://api.whatsapp.com/send?phone=%2B493083797477&app=facebook&entry_point=page_cta&fbclid=IwAR3eUU2FYqyUPJNi23MAOH_es4Bg4zLhFCDPPH1volXz6W4XI9lfqXrgoBc"></a> */}
+                            <a href="https://www.whatsapp.com">
+                                <img src={whatsappImg} alt="whatsapp" />
+                            </a>
                             <p>WhatsApp</p>
                         </div>
                     </div>

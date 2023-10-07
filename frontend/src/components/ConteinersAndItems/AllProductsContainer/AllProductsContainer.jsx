@@ -11,9 +11,12 @@ export default function AllProductsContainer() {
 
     return (
         <div>
-            <FilterForm />
-            <DiscoutntForm />
-            <SortForm />
+            <div style={{ display: 'flex' }}>
+                <FilterForm />
+                <DiscoutntForm />
+                <SortForm />
+            </div>
+
             <ProductsContainer products={all_products_state} category_show={true} />
 
         </div>

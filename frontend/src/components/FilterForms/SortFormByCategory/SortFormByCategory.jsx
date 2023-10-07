@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { discountProductsAction, filterProductsAction, sortProductsAction } from '../../../store/reducers/productsByCategoryReducer';
-import s from '../SortFormForSales/SortFormForSales.module.css'
+import s from '../SortFormByCategory/SortFormByCategory.module.css'
 
 
 
@@ -29,7 +29,7 @@ export default function SortFormForSales() {
     };
     return (
 
-        <div >
+        <div className={s.container}>
             <form className={s.price} onSubmit={submit}>
                 <p className={s.title}>Price</p>
                 <input type='' placeholder='min' name='min' />
@@ -37,12 +37,12 @@ export default function SortFormForSales() {
                 <button type='submit'>Filter</button>
             </form>
 
-            <label>
-                <p>Discounted items</p>
+            <div className={s.discount}>
+                <p className={s.title}>Discounted items</p>
                 <input type="checkbox" checked={checkboxChecked} onChange={handelChange}
-                    onClick={get_products}
+                    onClick={get_products} className={s.input}
                 />
-            </label>
+            </div>
 
 
             <div className={s.sorted}>

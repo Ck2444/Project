@@ -5,25 +5,14 @@ import { NavLink } from 'react-router-dom'
 import img2 from '../../../media/image_3.png'
 import { useSelector } from 'react-redux'
 import CategoryCard from '../../ConteinersAndItems/CategoryCard/CategoryCard'
-import { useForm } from 'react-hook-form'
+
 import ProductsContainer from '../../ConteinersAndItems/ProductsContainer/ProductsContainer'
+import DwarfForm from '../../ConteinersAndItems/DwarfForm/DwarfForm'
 
 
 
 export default function MainPage() {
-    const { register, handleSubmit, formState: { errors } } = useForm({
-        mode: 'onChange'
-    });
 
-    const phoneNumberRegister = register('phoneNumber', {
-        required: "*This field is required",
-        pattern: {
-            value: /^(?:\+49|0)[1-9][0-9]*(?:[\s-]?\d+)*$/,
-            message: '*Please, enter valid phoneNumber address'
-        }
-    });
-
-    const submit = data => console.log(data);
 
     const categories_state = useSelector(state => state.categeories)
 
@@ -53,6 +42,7 @@ export default function MainPage() {
 
 
 
+
     return (
         <div>
 
@@ -69,7 +59,7 @@ export default function MainPage() {
 
             <div className={s.catalog}>
                 <p>Catalog</p>
-                <NavLink to='/categories' className={s.all_categories_btn}>All categories </NavLink>
+                <NavLink to='/categories'>All categories </NavLink>
             </div>
             <div className={s.sliced_array}>
                 {
@@ -81,22 +71,9 @@ export default function MainPage() {
             <section className={s.dwarf_section} >
                 <img src={img2} alt="dwarf_image" className={s.draw_img} />
                 <div className={s.draw_block_content}>
-                    <h2><span class={s.large_text}>5% off</span><br /><span class={s.small_text}>the first order</span></h2>
+                    <h2><span className={s.large_text}>5% off</span><br /><span className={s.small_text}>the first order</span></h2>
 
-
-                    <form onSubmit={handleSubmit(submit)}>
-                        <input
-                            type="text"
-                            placeholder='+49' name='phoneNumber'
-                            {...phoneNumberRegister}
-                        />
-
-                        {errors.phoneNumber && <p className={s.error_msg}>{errors.phoneNumber?.message}</p>}
-
-
-
-                        <button>Get a discount</button>
-                    </form>
+                    <DwarfForm />
 
                 </div>
             </section>

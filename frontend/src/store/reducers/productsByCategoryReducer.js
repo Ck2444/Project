@@ -15,7 +15,12 @@ export const discountProductsAction = payload => ({  // Fixed typo here
     type: GET_DISCOUNT_PRODUCTS, payload
 });
 
-export const productsByCategoryReducer = (state = {}, action) => {  // Fixed typo here
+const initialState = {
+    data: [],
+    category: null,
+};
+
+export const productsByCategoryReducer = (state = initialState, action) => {  // Fixed typo here
     switch (action.type) {
         case LOAD_PRODUCTS_BY_CATEGORY: {
             const { data, category } = action.payload;
@@ -27,9 +32,17 @@ export const productsByCategoryReducer = (state = {}, action) => {  // Fixed typ
             if (action.payload === 'title') {
                 sortedData.sort((a, b) => a.title.localeCompare(b.title));
             } else if (action.payload === 'price_asc') {
-                sortedData.sort((a, b) => a.price - b.price);
+                sortedData.sort((a, b) => {
+                    const aFinalPrice = a.discont_price ? a.discont_price : a.price;
+                    const bFinalPrice = b.discont_price ? b.discont_price : b.price;
+                    return aFinalPrice - bFinalPrice;
+                });
             } else if (action.payload === 'price_desc') {
-                sortedData.sort((a, b) => b.price - a.price);
+                sortedData.sort((a, b) => {
+                    const aFinalPrice = a.discont_price ? a.discont_price : a.price;
+                    const bFinalPrice = b.discont_price ? b.discont_price : b.price;
+                    return bFinalPrice - aFinalPrice;
+                });
             } else if (action.payload === 'default') {
                 sortedData.sort((a, b) => a.id - b.id);
             }
@@ -38,7 +51,9 @@ export const productsByCategoryReducer = (state = {}, action) => {  // Fixed typ
         case FILTER_PRODUCTS: {
             const { min_value, max_value } = action.payload;
             const filteredData = state.data.map(el => {
-                if (el.price >= min_value && el.price <= max_value) {
+                if ((el.discont_price ? el.discont_price : el.price) >= min_value && (el.discont_price ? el.discont_price : el.price) <= max_value)
+                // if ( el.price >= min_value && el.price  <= max_value) 
+                {
                     el.show_product = true;
                 } else {
                     el.show_product = false;

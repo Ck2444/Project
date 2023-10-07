@@ -34,6 +34,12 @@
 
 } */
 
+.discountInfo {
+    display: flex;
+    justify-content: space-between;
+
+}
+
 .priceText {
     color: #000;
     font-size: 70px;
@@ -41,6 +47,49 @@
     line-height: 130%;
     letter-spacing: 2.1px;
 }
+
+.old_price {
+    display: flex;
+    align-items: flex-end;
+    color: #8B8B8B;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 130%;
+    letter-spacing: 0.6px;
+    text-decoration: line-through;
+    margin-bottom: 20px;
+
+}
+
+
+.discount {
+    display: flex;
+    align-items: flex-end;
+    color: #FF32A1;
+    font-family: Montserrat;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    /* 36.4px */
+    letter-spacing: 0.84px;
+    margin-bottom: 18px;
+}
+
+.discountSymbol {
+    display: flex;
+    align-items: flex-end;
+    color: #FF32A1;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.6px;
+    margin-bottom: 3px;
+
+}
+
 
 .currencySymbol {
     color: #000;

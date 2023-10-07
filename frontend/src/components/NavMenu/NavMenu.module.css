@@ -6,6 +6,7 @@
     margin-right: 28px;
     display: flex;
     justify-content: space-between;
+    position: relative;
 
 }
 
@@ -36,7 +37,7 @@
 .second_menu {
     width: 546px;
     margin-right: 137px;
-    padding-left: 100px;
+    padding-left: 85px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,7 +45,6 @@
 }
 
 .link {
-    font-size: 16px;
     font-style: normal;
     font-weight: 500;
     line-height: 130%;
@@ -73,4 +73,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.count_num {
+    background-color: rgb(230, 230, 24);
+    color: black;
+    padding: 0px 17px;
+    border-radius: 50%;
+    position: absolute;
+    font-size: 16px;
+    top: 19px;
+    right: -46px;
 }

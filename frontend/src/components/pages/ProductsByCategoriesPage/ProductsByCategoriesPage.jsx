@@ -19,14 +19,21 @@ export default function ProductsByCategoriesPage() {
 
     const products_by_category_state = useSelector(state => state.productsByCategory);
     const products = products_by_category_state?.data || [];
-    console.log(products);
 
-    // console.log(products_by_category_state);
+
     const category_with_title = products_by_category_state.category;
+
+    const h1Styles = {
+        fontWeight: 700,
+        lineHeight: "130%",
+        letterSpacing: "1.2px",
+        marginLeft: '31px'
+    };
+
 
     return (
         <div>
-            <p> {category_with_title?.title}</p>
+            <h1 style={h1Styles}> {category_with_title?.title}</h1>
             <SortFormByCategory />
             <ProductsContainer products={products} category_show={false} />
         </div>

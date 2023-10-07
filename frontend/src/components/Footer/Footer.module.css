@@ -71,9 +71,20 @@ h1 {
     margin: 20px;
 }
 
+.icon a {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+}
+
+.icon p {
+    color: black;
+    margin-top: 8px;
+}
 
 
-.content_cont img {
+
+.content_cont a {
     width: 70px;
     height: 58px;
     margin-bottom: 8px;
@@ -81,7 +92,6 @@ h1 {
 
 .social_media_content {
     display: flex;
-    gap: 35px;
     margin-top: 33px;
 }
 
