@@ -80,7 +80,7 @@ export default function MainPage() {
 
             <div className={s.sale_style}>Sale</div>
 
-            <div className={s.product_container}>
+            <div>
                 <ProductsContainer products={randomSaleArray} />
             </div>
 

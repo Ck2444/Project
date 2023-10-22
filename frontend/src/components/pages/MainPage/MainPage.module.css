@@ -5,7 +5,7 @@
     background-color: #A1E2EB;
     display: flex;
     justify-content: space-between;
-    /* position: absolute; */
+
 
 }
 
@@ -46,6 +46,8 @@
     position: relative;
     bottom: 108px;
 }
+
+/*-----catalog-----*/
 
 .catalog {
     display: flex;
@@ -125,50 +127,181 @@
     letter-spacing: 1.5px;
 }
 
-/* .draw_block_content input {
-    width: 473px;
-    height: 75.441px;
-    border-radius: 25.147px;
-    color: #6C6C6C;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 120%;
-    letter-spacing: 0.54px;
-    padding: 27.34px 27.34px 26.1px 50.29px;
-    margin-top: 46px;
-}
-
-.draw_block_content button {
-    color: #FFF;
-    font-size: 28.739px;
-    font-weight: 700;
-    line-height: 120%;
-    letter-spacing: 0.862px;
-    padding: 21.04px 116px 19.67px 120px;
-    border-radius: 25.147px;
-    border: 2.395px solid #FFF;
-    margin-top: 14.52px;
-    background: linear-gradient(263deg, #393 -0.43%, #006300 104.36%);
-
-}
-
-.error_msg {
-    margin-top: 10px;
-    margin-left: 10px;
-    color: rgb(215, 48, 48);
-    font-size: 15px;
-} */
 
 /* ------Sale------ */
 
 .sale_style {
     font-size: 40px;
     font-weight: 700;
-    margin-left: 30px;
+    margin-left: 0px;
     margin-top: 49px;
     margin-bottom: 21px;
 }
 
-.product_container {
-    margin-bottom: 44px;
+
+
+@media (max-width: 1200px) {
+    .block_section {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .block_content {
+        margin-left: 0;
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .block_content h2,
+    .block_content p,
+    .sale_button {
+        text-align: center;
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bush_img {
+        display: none;
+    }
+
+    /*---catalog----*/
+    .catalog {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .catalog p {
+
+        font-size: 30px;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .catalog a {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    .sliced_array {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        justify-items: center;
+    }
+
+
+
+    /*-----drawsection----*/
+
+    .dwarf_section {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0;
+    }
+
+    .draw_img {
+        width: 300px;
+        height: 300px;
+        margin: 20px 0;
+    }
+
+    .draw_block_content {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .large_text {
+        font-size: 70px;
+    }
+
+    .small_text {
+        font-size: 40px;
+    }
+
+    .draw_img {
+        display: none;
+    }
+
+    /*---Sale---*/
+    .sale_style {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
+
+
+
+
+@media (max-width: 768px) {
+
+    .block_section {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .block_content {
+        margin-left: 0;
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .block_content h2,
+    .block_content p,
+    .sale_button {
+        text-align: center;
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bush_img {
+        display: none;
+    }
+
+
+    /*---catalog---*/
+    .catalog {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .catalog p {
+        margin-right: 40px;
+        margin-bottom: 8px;
+    }
+
+    .catalog a {
+        margin-right: 40px;
+        padding: 4px 8px;
+    }
+
+    .sliced_array {
+        grid-template-columns: repeat(1, 1fr);
+        margin-left: 12px;
+        margin-right: 12px;
+        grid-column-gap: 12px;
+        grid-row-gap: 20px;
+    }
+
 }

@@ -31,3 +31,26 @@
     color: rgb(215, 48, 48);
     font-size: 15px;
 }
+
+@media only screen and (max-width: 1200px) {
+    .dwarf_form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Горизонтальное центрирование элементов */
+        justify-content: center;
+    }
+
+    .dwarf_form input,
+    .dwarf_form button {
+        width: 80%;
+        /* Установите ширину, которая вам подходит. Здесь я выбрал 80% от родительской ширины. */
+        margin: 15px 0;
+        /* Добавляем отступы сверху и снизу для разделения элементов */
+    }
+
+    .error_msg {
+        text-align: center;
+        /* Центрируем сообщение об ошибке */
+    }
+}
