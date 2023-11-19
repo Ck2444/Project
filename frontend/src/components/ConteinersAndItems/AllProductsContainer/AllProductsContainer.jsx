@@ -4,6 +4,7 @@ import DiscoutntForm from '../../FilterForms/DiscoutntForm/DiscoutntForm'
 import FilterForm from '../../FilterForms/FilterForm/FilterForm'
 import SortForm from '../../FilterForms/SortForm/SortForm'
 import ProductsContainer from '../ProductsContainer/ProductsContainer'
+import s from '../AllProductsContainer/AllProductsContainer.module.css'
 
 export default function AllProductsContainer() {
 
@@ -11,7 +12,7 @@ export default function AllProductsContainer() {
 
     return (
         <div>
-            <div style={{ display: 'flex' }}>
+            <div className={s.filter}>
                 <FilterForm />
                 <DiscoutntForm />
                 <SortForm />

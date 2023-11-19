@@ -30,3 +30,12 @@
 .price button {
     display: none;
 }
+
+
+@media (max-width: 1200px) {
+    .price {
+        margin-left: 103px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+}

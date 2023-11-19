@@ -12,8 +12,11 @@ import Footer from './components/Footer/Footer';
 import AllSales from './components/pages/AllSales/AllSales';
 import { getAllcategories } from './requests/categories_req';
 import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { getAllproducts } from './requests/singleCategory';
+import { useMediaQuery } from 'react-responsive';
+
+
 
 function App() {
 
@@ -25,10 +28,22 @@ function App() {
 
   }, [dispatch])
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const openMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
+  console.log(isMenuOpen)
+
+  const isMobile = useMediaQuery({ query: `(max-width: 768px)` });
+
+
+
+
   return (
     <div className='main_conainer'>
 
-      <NavMenu />
+      <NavMenu isMenuOpen={isMenuOpen} isMobile={isMobile} openMenu={openMenu} />
+      {/* {isMobile && <RxHamburgerMenu onClick={openMenu} />} */}
       <Routes>
         <Route path='/' element={<MainPage />} />
         <Route path='/categories' element={<AllCategoriesPage />} />

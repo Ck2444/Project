@@ -141,7 +141,12 @@
 
 
 @media (max-width: 1200px) {
+    .main_nav_menu {
+        width: 1000px;
+    }
+
     .block_section {
+        background-color: #A1E2EB;
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -152,6 +157,7 @@
         margin-left: 0;
         margin-top: 0;
         display: flex;
+        align-items: center;
         flex-direction: column;
         align-items: center;
 

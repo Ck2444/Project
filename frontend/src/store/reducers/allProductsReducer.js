@@ -59,6 +59,7 @@ export const productsReducer = (state = [], action) => {
             return state.map(el => {
                 if (el.discont_price === null) {
                     el.show_product = false
+
                 }
                 return el
             })
